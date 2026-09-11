@@ -84,6 +84,24 @@ import UIKit
         do { try save(changed) } catch { try? FileManager.default.removeItem(at: url); throw error }
         if let old { try? FileManager.default.removeItem(at: directory.appendingPathComponent(old)) }
     }
+    func removePhoto(from place: Place) throws {
+        let previous = visits
+        var changed = visits
+        var record = visit(place)
+        guard let filename = record.photoFilename else { return }
+        record.removePhoto()
+        changed[place.id] = record
+        try save(changed)
+        do {
+            let url = directory.appendingPathComponent(filename)
+            if FileManager.default.fileExists(atPath: url.path) {
+                try FileManager.default.removeItem(at: url)
+            }
+        } catch {
+            try save(previous)
+            throw error
+        }
+    }
     func thumbnail(for place: Place) -> UIImage? {
         guard let name = visit(place).photoFilename,
               let source = CGImageSourceCreateWithURL(directory.appendingPathComponent(name) as CFURL, nil),

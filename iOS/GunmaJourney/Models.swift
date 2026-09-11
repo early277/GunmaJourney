@@ -33,6 +33,12 @@ struct Visit: Codable {
     var capturedDateLabel: String?
     var capturedLatitude: Double?
     var capturedLongitude: Double?
+    mutating func removePhoto() {
+        photoFilename = nil
+        capturedDateLabel = nil
+        capturedLatitude = nil
+        capturedLongitude = nil
+    }
     var status: VisitStatus { liveDate != nil ? .visited : photoDate != nil ? .photo : .unvisited }
 }
 enum VisitStatus { case unvisited, photo, visited }

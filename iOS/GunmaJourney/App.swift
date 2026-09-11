@@ -299,6 +299,13 @@ struct PhotoGallery: View {
                     }
                 }
             }.background(Color.black).navigationTitle("写真").navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        if let place = photographed.first(where: { $0.id == selectedID }) {
+                            DeletePhotoButton(place: place)
+                        }
+                    }
+                }
                 .onAppear { reconcileSelection() }
                 .onChange(of: photographed.map(\.id)) { _, _ in reconcileSelection() }
         }
@@ -482,6 +489,7 @@ struct DetailView: View {
                         Label(photoButtonTitle, systemImage: "photo.badge.plus").frame(maxWidth: .infinity)
                     }.buttonStyle(.bordered).disabled(importing)
                     if let image = store.image(for: place) { Image(uiImage: image).resizable().scaledToFit().clipShape(RoundedRectangle(cornerRadius: 12)).accessibilityLabel("この地点に保存した写真") }
+                    if store.visit(place).photoFilename != nil { DeletePhotoButton(place: place) }
                 }.padding()
             }.navigationTitle("訪問先").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .confirmationAction) { Button("閉じる") { dismiss() } } }
@@ -623,7 +631,7 @@ struct PrivacyPolicyView: View {
                 Text("共有を選ぶと、プレビューに表示された画像を、利用者が指定したアプリや保存先に渡します。写真・場所名の表示は共有前に選べます。ひらがな、訪問状況、撮影年月は画像に含まれます。共有画像にGPSのEXIF情報は付けません。")
             }
             Section("保存期間と削除") {
-                Text("記録はアプリを削除するまで端末内に残ります。写真を置き換えた場合、古いアプリ内コピーは削除します。iPhoneの設定により、記録が端末バックアップに含まれることがあります。バックアップや共有先・写真ライブラリに保存したコピーは、それぞれのサービスで管理・削除してください。")
+                Text("記録はアプリを削除するまで端末内に残ります。写真を削除した場合や置き換えた場合、対象のアプリ内コピーは削除します。iPhoneの設定により、記録が端末バックアップに含まれることがあります。バックアップや共有先・写真ライブラリに保存したコピーは、それぞれのサービスで管理・削除してください。")
                 Text("位置情報・カメラ・写真への追加の許可は、iPhoneの設定から変更できます。アカウント登録はありません。")
             }
             Section("公開ページ・お問い合わせ") {
@@ -799,5 +807,29 @@ struct NativeJourneyMap: UIViewRepresentable {
             map.deselectAnnotation(pin, animated: false)
             DispatchQueue.main.async { select(pin.place) }
         }
+    }
+}
+
+struct DeletePhotoButton: View {
+    let place: Place
+    @EnvironmentObject var store: JourneyStore
+    @State private var confirming = false
+    @State private var failure: String?
+    var body: some View {
+        Button(role: .destructive) { confirming = true } label: {
+            Label("写真を削除", systemImage: "trash")
+        }
+        .confirmationDialog("この写真を削除しますか？", isPresented: $confirming, titleVisibility: .visible) {
+            Button("写真を削除", role: .destructive) {
+                do { try store.removePhoto(from: place) }
+                catch { failure = error.localizedDescription }
+            }
+            Button("キャンセル", role: .cancel) { }
+        } message: {
+            Text("アプリ内の写真だけを削除します。スタンプと訪問記録、写真ライブラリの元の写真は残ります。")
+        }
+        .alert("写真を削除できませんでした", isPresented: Binding(get: { failure != nil }, set: { if !$0 { failure = nil } })) {
+            Button("閉じる", role: .cancel) { failure = nil }
+        } message: { Text(failure ?? "") }
     }
 }
