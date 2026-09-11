@@ -25,7 +25,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>現在地が訪問先の判定範囲内か確認し、現地スタンプを記録するために使います。アプリ内で撮影するときも、撮影位置を写真画面の略図に示すために使います。位置情報は端末内で処理し、アプリの使用中だけ取得します。</string>
+	<string>現在地が訪問先の判定範囲内か確認し、現地スタンプを記録するために使います。位置情報は端末内で判定に使い、座標は保存しません。アプリの使用中、現在地を確認する操作をしたときに取得します。</string>
 	<key>NSCameraUsageDescription</key>
 	<string>訪問先で記念写真を撮り、カードの背景と写真一覧に表示するためにカメラを使います。写真はこのiPhoneのアプリ内に保存し、共有を選んだときだけ共有先へ渡します。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

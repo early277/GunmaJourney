@@ -505,7 +505,7 @@ struct DetailView: View {
                     }
                 }
                 .fullScreenCover(isPresented: $showCamera) { CameraView { image in
-                    if let image { do { try store.addCameraPhoto(image, to: place, fix: location.fix) } catch { message = error.localizedDescription } }
+                    if let image { do { try store.addCameraPhoto(image, to: place) } catch { message = error.localizedDescription } }
                 }.ignoresSafeArea() }
                 .alert("お知らせ", isPresented: Binding(get: { message != nil }, set: { if !$0 { message = nil } })) { Button("閉じる", role: .cancel) { message = nil } } message: { Text(message ?? "") }
         }
@@ -555,7 +555,7 @@ struct DetailView: View {
     private func openCamera() async {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else { message = "この端末ではカメラを利用できません。"; return }
         let granted = await AVCaptureDevice.requestAccess(for: .video)
-        if granted { location.refresh(); showCamera = true } else { message = "設定でカメラの利用を許可すると撮影できます。" }
+        if granted { showCamera = true } else { message = "設定でカメラの利用を許可すると撮影できます。" }
     }
 }
 struct CameraView: UIViewControllerRepresentable {
@@ -615,11 +615,11 @@ struct PrivacyPolicyView: View {
     var body: some View {
         List {
             Section("端末内の記録") {
-                Text("訪問日時、選んだ写真、写真の撮影日・撮影位置を、このアプリの保存領域に記録します。撮影位置は訪問範囲の判定と写真画面の略図に使います。開発者のサーバーへの送信、広告配信、行動分析、追跡は行いません。")
+                Text("訪問日時、選んだ写真、写真の撮影日を、このアプリの保存領域に記録します。写真の位置情報は追加時の訪問範囲の判定にだけ使い、保存しません。写真画面の略図は訪問先の位置を示します。開発者のサーバーへの送信、広告配信、行動分析、追跡は行いません。")
             }
             Section("位置情報と写真") {
-                Text("現在地は、利用者が現在地確認やアプリ内撮影を選んだときに取得します。背景での継続追跡は行いません。写真の選択にはiOSの写真選択画面を使い、利用者が選んだ写真のみを読み込みます。元の写真は変更しません。")
-                Text("取り込んだ写真は縮小したコピーをアプリ内に保存します。撮影日と座標は記録データに保存しますが、コピー画像には元写真のEXIF情報を引き継ぎません。")
+                Text("現在地は、利用者が現在地確認を選んだときに取得します。背景での継続追跡は行いません。写真の選択にはiOSの写真選択画面を使い、利用者が選んだ写真のみを読み込みます。元の写真は変更しません。")
+                Text("取り込んだ写真は縮小したコピーをアプリ内に保存します。撮影日は記録データに保存しますが、コピー画像には元写真のEXIF情報を引き継ぎません。旧バージョンで保存した写真の座標は、更新後の起動時にアプリ内の記録から取り除きます。")
             }
             Section("地図・外部サービス") {
                 Text("Appleマップや地理院タイルを表示するとき、表示地域やIPアドレスなど通信に必要な情報が提供元へ送られます。経路案内や関連情報のリンクを開くと、目的地等が選択したサービスへ渡されます。移動先では各提供元のプライバシーポリシーが適用されます。")
@@ -648,9 +648,9 @@ struct PhotoCaption: View {
     let place: Place
     var body: some View {
         HStack(alignment: .bottom) {
-            GunmaPhotoOutline(latitude: visit.capturedLatitude ?? place.latitude, longitude: visit.capturedLongitude ?? place.longitude)
+            GunmaPhotoOutline(latitude: place.latitude, longitude: place.longitude)
                 .frame(width: 76, height: 72)
-                .accessibilityLabel(visit.capturedLatitude == nil ? "群馬県の輪郭と訪問先の位置" : "群馬県の輪郭と撮影位置")
+                .accessibilityLabel("群馬県の輪郭と訪問先の位置")
             Spacer(minLength: 8)
             if let date = visit.capturedDateLabel {
                 Text(date).font(.system(size: 15, weight: .medium, design: .monospaced)).foregroundStyle(.white)

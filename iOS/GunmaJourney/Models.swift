@@ -31,13 +31,9 @@ struct Visit: Codable {
     var photoDate: Date?
     var photoFilename: String?
     var capturedDateLabel: String?
-    var capturedLatitude: Double?
-    var capturedLongitude: Double?
     mutating func removePhoto() {
         photoFilename = nil
         capturedDateLabel = nil
-        capturedLatitude = nil
-        capturedLongitude = nil
     }
     var status: VisitStatus { liveDate != nil ? .visited : photoDate != nil ? .photo : .unvisited }
 }
@@ -53,5 +49,15 @@ enum VisitRule {
     }
     static func photoInside(_ place: Place, coordinate: CLLocationCoordinate2D) -> Bool {
         CLLocationCoordinate2DIsValid(coordinate) && place.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) <= place.radiusM
+    }
+}
+
+enum VisitArchiveMigration {
+    static func removingPhotoCoordinates(from data: Data) throws -> Data? {
+        let object = try JSONSerialization.jsonObject(with: data)
+        guard let records = object as? [String: [String: Any]],
+              records.values.contains(where: { $0["capturedLatitude"] != nil || $0["capturedLongitude"] != nil }) else { return nil }
+        let visits = try JSONDecoder().decode([String: Visit].self, from: data)
+        return try JSONEncoder().encode(visits)
     }
 }

@@ -17,6 +17,14 @@ import UIKit
         directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("Journey", isDirectory: true)
         do {
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+            // Remove obsolete coordinates from both regular and former debug records.
+            for name in ["visits.json", "debug-visits.json"] {
+                let url = directory.appendingPathComponent(name)
+                if FileManager.default.fileExists(atPath: url.path),
+                   let cleaned = try VisitArchiveMigration.removingPhotoCoordinates(from: Data(contentsOf: url)) {
+                    try cleaned.write(to: url, options: [.atomic, .completeFileProtection])
+                }
+            }
             let decoder = JSONDecoder(); decoder.keyDecodingStrategy = .convertFromSnakeCase
             guard let regions = Bundle.main.url(forResource: "regions", withExtension: "json"),
                   let copy = Bundle.main.url(forResource: "descriptions", withExtension: "json") else { throw StoreError.message("地点データを読み込めませんでした。") }
@@ -56,15 +64,14 @@ import UIKit
             guard let coordinate = metadata.coordinate else { throw StoreError.message("この写真には位置情報が含まれていません。位置情報付きの写真を選んでください。") }
             guard VisitRule.photoInside(place, coordinate: coordinate) else { throw StoreError.message("写真の撮影場所が、この地点の判定範囲外です。") }
         }
-        try savePhoto(image, place: place, imported: needsLocation, dateLabel: metadata.dateLabel, coordinate: metadata.coordinate)
+        try savePhoto(image, place: place, imported: needsLocation, dateLabel: metadata.dateLabel)
     }
-    func addCameraPhoto(_ image: UIImage, to place: Place, fix: CLLocation? = nil) throws {
+    func addCameraPhoto(_ image: UIImage, to place: Place) throws {
         guard visit(place).liveDate != nil else { throw StoreError.message("先に現地スタンプを押してください。") }
         let formatter = DateFormatter(); formatter.locale = Locale(identifier: "en_US_POSIX"); formatter.dateFormat = "yyyy.MM.dd"
-        let coordinate = fix.flatMap { VisitRule.validFix($0) ? $0.coordinate : nil }
-        try savePhoto(image, place: place, imported: false, dateLabel: formatter.string(from: Date()), coordinate: coordinate)
+        try savePhoto(image, place: place, imported: false, dateLabel: formatter.string(from: Date()))
     }
-    private func savePhoto(_ image: UIImage, place: Place, imported: Bool, dateLabel: String?, coordinate: CLLocationCoordinate2D?) throws {
+    private func savePhoto(_ image: UIImage, place: Place, imported: Bool, dateLabel: String?) throws {
         let maxSide: CGFloat = 1600
         let scale = min(1, maxSide / max(image.size.width, image.size.height))
         let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
@@ -77,8 +84,6 @@ import UIKit
         var changed = visits; var v = visit(place); let old = v.photoFilename
         v.photoFilename = filename
         v.capturedDateLabel = dateLabel
-        v.capturedLatitude = coordinate?.latitude
-        v.capturedLongitude = coordinate?.longitude
         if imported { v.photoDate = Date() }
         changed[place.id] = v
         do { try save(changed) } catch { try? FileManager.default.removeItem(at: url); throw error }
