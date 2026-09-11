@@ -1,0 +1,444 @@
+{
+  "locations": [
+    {
+      "id": "g01",
+      "kana": "あ",
+      "destination": "鬼押し出し",
+      "latitude": 36.42970199454413,
+      "longitude": 138.5303587,
+      "radius_m": 3000,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%AC%BC%E6%8A%BC%E5%87%BA%E3%81%97%E5%9C%92",
+      "context_source_url": "https://www.princehotels.co.jp/amuse/onioshidashi/access/"
+    },
+    {
+      "id": "g02",
+      "kana": "い",
+      "destination": "伊香保温泉",
+      "latitude": 36.4971761,
+      "longitude": 138.916373,
+      "radius_m": 2000,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/887031411",
+      "context_source_url": null
+    },
+    {
+      "id": "g03",
+      "kana": "う",
+      "destination": "碓氷関所跡",
+      "latitude": 36.3385447,
+      "longitude": 138.7324559,
+      "radius_m": 100,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%A2%93%E6%B0%B7%E9%96%A2%E6%89%80%E8%B7%A1",
+      "context_source_url": "https://www.city.annaka.lg.jp/spots/kankou/29701.html"
+    },
+    {
+      "id": "g04",
+      "kana": "え",
+      "destination": "少林山達磨寺",
+      "latitude": 36.3299126,
+      "longitude": 138.9573627,
+      "radius_m": 200,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/256525207",
+      "context_source_url": null
+    },
+    {
+      "id": "g05",
+      "kana": "お",
+      "destination": "大光院",
+      "latitude": 36.3057251,
+      "longitude": 139.37022,
+      "radius_m": 150,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A7%E5%85%89%E9%99%A2",
+      "context_source_url": null
+    },
+    {
+      "id": "g06",
+      "kana": "か",
+      "destination": "城址公園・高崎市役所",
+      "latitude": 36.3219629,
+      "longitude": 139.0032841,
+      "radius_m": 200,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%AB%98%E5%B4%8E%E5%B8%82%E5%BD%B9%E6%89%80",
+      "context_source_url": "https://www.city.takasaki.gunma.jp/page/3823.html"
+    },
+    {
+      "id": "g07",
+      "kana": "き",
+      "destination": "桐生織物記念館",
+      "latitude": 36.4129518,
+      "longitude": 139.3367186,
+      "radius_m": 50,
+      "coordinate_source_url": "https://map.yahoo.co.jp/v3/place/dJq1ouTmeNg",
+      "context_source_url": "https://kiryuorimonokinenkan.com/cooperative-association/"
+    },
+    {
+      "id": "g08",
+      "kana": "く",
+      "destination": "草津温泉",
+      "latitude": 36.6230547,
+      "longitude": 138.5967791,
+      "radius_m": 2000,
+      "coordinate_source_url": "https://www.kusatsu-onsen.ne.jp/kankou/1004.php",
+      "context_source_url": null
+    },
+    {
+      "id": "g09",
+      "kana": "け",
+      "destination": "臨江閣",
+      "latitude": 36.3959035,
+      "longitude": 139.062229,
+      "radius_m": 100,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/477256768",
+      "context_source_url": "https://www.visit-gunma.jp/en/spots/rinkokaku/"
+    },
+    {
+      "id": "g10",
+      "kana": "こ",
+      "destination": "内村鑑三記念碑",
+      "latitude": 36.3196594,
+      "longitude": 139.0026122,
+      "radius_m": 50,
+      "coordinate_source_url": "https://map.yahoo.co.jp/v3/place/86MKbXL18Ak",
+      "context_source_url": "https://www.city.takasaki.gunma.jp/uploaded/attachment/21786.pdf"
+    },
+    {
+      "id": "g11",
+      "kana": "さ",
+      "destination": "三波石峡・桜山公園",
+      "latitude": 36.1463,
+      "longitude": 139.0265,
+      "radius_m": 3500,
+      "coordinate_source_url": "https://gunma-kanko.jp/spots/1342",
+      "context_source_url": "https://www.pref.gunma.jp/page/143868.html"
+    },
+    {
+      "id": "g12",
+      "kana": "し",
+      "destination": "大室公園",
+      "latitude": 36.3873856,
+      "longitude": 139.1953661,
+      "radius_m": 600,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/497735003",
+      "context_source_url": "https://www.city.maebashi.gunma.jp/shisetsu/1/5/47335.html"
+    },
+    {
+      "id": "g13",
+      "kana": "す",
+      "destination": "赤城山",
+      "latitude": 36.5526333,
+      "longitude": 139.1809988,
+      "radius_m": 5000,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%B5%A4%E5%9F%8E%E7%A5%9E%E7%A4%BE",
+      "context_source_url": null
+    },
+    {
+      "id": "g14",
+      "kana": "せ",
+      "destination": "尾瀬沼",
+      "latitude": 36.9261849,
+      "longitude": 139.30512,
+      "radius_m": 2500,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/479265067",
+      "context_source_url": "https://oze-fnd.or.jp/ozb/route/route5/"
+    },
+    {
+      "id": "g15",
+      "kana": "そ",
+      "destination": "桐生市街",
+      "latitude": 36.410732350138375,
+      "longitude": 139.33910657165515,
+      "radius_m": 827,
+      "coordinate_source_url": "https://www.wikidata.org/wiki/Q11537291",
+      "context_source_url": "https://www.city.kiryu.lg.jp/kankou/1010571/yagibushi/1002291.html"
+    },
+    {
+      "id": "g16",
+      "kana": "た",
+      "destination": "吹割の滝",
+      "latitude": 36.70330138973942,
+      "longitude": 139.20753281835974,
+      "radius_m": 430,
+      "coordinate_source_url": "https://www.openstreetmap.org/node/3174003692",
+      "context_source_url": null
+    },
+    {
+      "id": "g17",
+      "kana": "ち",
+      "destination": "群馬県立歴史博物館",
+      "latitude": 36.2985833,
+      "longitude": 139.08281978,
+      "radius_m": 700,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E7%AB%8B%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "context_source_url": "https://www.pref.gunma.jp/page/3802.html"
+    },
+    {
+      "id": "g18",
+      "kana": "つ",
+      "destination": "群馬県庁・前橋公園",
+      "latitude": 36.392638683224035,
+      "longitude": 139.06051342088068,
+      "radius_m": 290,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%BA%81",
+      "context_source_url": null
+    },
+    {
+      "id": "g19",
+      "kana": "て",
+      "destination": "茂左衛門地蔵尊千日堂",
+      "latitude": 36.681840311096295,
+      "longitude": 138.994960967969,
+      "radius_m": 90,
+      "coordinate_source_url": "https://hotokami.jp/area/gunma/Hkttr/Hkttrtm/Drgrk/145698/map/",
+      "context_source_url": null
+    },
+    {
+      "id": "g20",
+      "kana": "と",
+      "destination": "水紀行館",
+      "latitude": 36.7648229,
+      "longitude": 138.9682916,
+      "radius_m": 300,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%B0%B4%E7%B4%80%E8%A1%8C%E9%A4%A8",
+      "context_source_url": null
+    },
+    {
+      "id": "g21",
+      "kana": "な",
+      "destination": "安中杉並木",
+      "latitude": 36.31994111000399,
+      "longitude": 138.87545912189606,
+      "radius_m": 370,
+      "coordinate_source_url": "https://map.yahoo.co.jp/v3/place/IP_bTBBkOYo",
+      "context_source_url": "https://www.city.annaka.lg.jp/page/21674.html"
+    },
+    {
+      "id": "g22",
+      "kana": "に",
+      "destination": "富岡製糸場",
+      "latitude": 36.2554996,
+      "longitude": 138.8875682,
+      "radius_m": 169,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%AF%8C%E5%B2%A1%E8%A3%BD%E7%B3%B8%E5%A0%B4",
+      "context_source_url": null
+    },
+    {
+      "id": "g23",
+      "kana": "ぬ",
+      "destination": "塩原太助翁記念公園",
+      "latitude": 36.68078,
+      "longitude": 138.946456,
+      "radius_m": 102,
+      "coordinate_source_url": "https://www.enjoy-minakami.jp/spot/8061/",
+      "context_source_url": "https://www.enjoy-minakami.jp/spot/8061/"
+    },
+    {
+      "id": "g24",
+      "kana": "ね",
+      "destination": "道の駅しもにた",
+      "latitude": 36.2239797,
+      "longitude": 138.8023419,
+      "radius_m": 180,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/436801461",
+      "context_source_url": null
+    },
+    {
+      "id": "g25",
+      "kana": "の",
+      "destination": "榛名山",
+      "latitude": 36.47498014611704,
+      "longitude": 138.8714698177232,
+      "radius_m": 2398,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/263787574",
+      "context_source_url": null
+    },
+    {
+      "id": "g26",
+      "kana": "は",
+      "destination": "つつじが岡公園",
+      "latitude": 36.24301436735159,
+      "longitude": 139.55352383193542,
+      "radius_m": 482,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/515580186",
+      "context_source_url": null
+    },
+    {
+      "id": "g27",
+      "kana": "ひ",
+      "destination": "高崎白衣大観音",
+      "latitude": 36.3109646,
+      "longitude": 138.980551,
+      "radius_m": 50,
+      "coordinate_source_url": "https://www.openstreetmap.org/node/1736439895",
+      "context_source_url": null
+    },
+    {
+      "id": "g28",
+      "kana": "ふ",
+      "destination": "茂林寺",
+      "latitude": 36.22730508954955,
+      "longitude": 139.53303484079206,
+      "radius_m": 480,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%8C%82%E6%9E%97%E5%AF%BA",
+      "context_source_url": null
+    },
+    {
+      "id": "g29",
+      "kana": "へ",
+      "destination": "新島襄旧宅",
+      "latitude": 36.3206065,
+      "longitude": 138.8851653,
+      "radius_m": 100,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%96%B0%E5%B3%B6%E8%A5%84%E6%97%A7%E5%AE%85",
+      "context_source_url": null
+    },
+    {
+      "id": "g30",
+      "kana": "ほ",
+      "destination": "田山花袋記念文学館",
+      "latitude": 36.2438741,
+      "longitude": 139.5455845,
+      "radius_m": 200,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/515572151",
+      "context_source_url": "https://www.city.tatebayashi.gunma.jp/sp006/"
+    },
+    {
+      "id": "g31",
+      "kana": "ま",
+      "destination": "高山社跡",
+      "latitude": 36.2034916,
+      "longitude": 139.0318955,
+      "radius_m": 307,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%AB%98%E5%B1%B1%E7%A4%BE%E8%B7%A1",
+      "context_source_url": "https://www.city.fujioka.gunma.jp/soshiki/kyoikuiinkai/bunkazaihogo/2/2/2-03/1074.html"
+    },
+    {
+      "id": "g32",
+      "kana": "み",
+      "destination": "谷川岳",
+      "latitude": 36.82994618354359,
+      "longitude": 138.94417581309497,
+      "radius_m": 1905,
+      "coordinate_source_url": "https://maps.gsi.go.jp/#15/36.83722/138.93000/",
+      "context_source_url": "https://tanigawadake-joch.com/"
+    },
+    {
+      "id": "g33",
+      "kana": "む",
+      "destination": "多胡碑",
+      "latitude": 36.265009641160226,
+      "longitude": 138.99701837031415,
+      "radius_m": 130,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%9A%E8%83%A1%E7%A2%91",
+      "context_source_url": null
+    },
+    {
+      "id": "g34",
+      "kana": "め",
+      "destination": "いせさき明治館",
+      "latitude": 36.321313,
+      "longitude": 139.19267,
+      "radius_m": 168,
+      "coordinate_source_url": "https://gunma-kanko.jp/spots/421",
+      "context_source_url": "https://isesaki-kankou.com/meijikan/"
+    },
+    {
+      "id": "g35",
+      "kana": "も",
+      "destination": "妙義山",
+      "latitude": 36.3023441226279,
+      "longitude": 138.7305138902377,
+      "radius_m": 3489,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A6%99%E7%BE%A9%E7%A5%9E%E7%A4%BE",
+      "context_source_url": null
+    },
+    {
+      "id": "g36",
+      "kana": "や",
+      "destination": "吾妻峡",
+      "latitude": 36.5620234,
+      "longitude": 138.72135,
+      "radius_m": 344,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/182787605",
+      "context_source_url": null
+    },
+    {
+      "id": "g37",
+      "kana": "ゆ",
+      "destination": "一之宮貫前神社",
+      "latitude": 36.2551686,
+      "longitude": 138.8576398,
+      "radius_m": 258,
+      "coordinate_source_url": "https://map.yahoo.co.jp/v3/place/0r90uEEoUnk",
+      "context_source_url": "https://gunma-kanko.jp/spots/585"
+    },
+    {
+      "id": "g38",
+      "kana": "よ",
+      "destination": "四万温泉",
+      "latitude": 36.6863058,
+      "longitude": 138.773405,
+      "radius_m": 2000,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/764563075",
+      "context_source_url": null
+    },
+    {
+      "id": "g39",
+      "kana": "ら",
+      "destination": "雷電神社",
+      "latitude": 36.2275396,
+      "longitude": 139.6068288,
+      "radius_m": 215,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%9B%B7%E9%9B%BB%E7%A5%9E%E7%A4%BE",
+      "context_source_url": "https://gunma-kanko.jp/spots/89"
+    },
+    {
+      "id": "g40",
+      "kana": "り",
+      "destination": "矢木沢ダム",
+      "latitude": 36.9143848,
+      "longitude": 139.0564149,
+      "radius_m": 1104,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%9F%A2%E6%9C%A8%E6%B2%A2%E3%83%80%E3%83%A0",
+      "context_source_url": "https://www.water.go.jp/kanto/numata/08_qa/qa.html"
+    },
+    {
+      "id": "g41",
+      "kana": "る",
+      "destination": "土合駅",
+      "latitude": 36.83101721586786,
+      "longitude": 138.96729180173443,
+      "radius_m": 129,
+      "coordinate_source_url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%9C%9F%E5%90%88%E9%A7%85",
+      "context_source_url": null
+    },
+    {
+      "id": "g42",
+      "kana": "れ",
+      "destination": "生品神社",
+      "latitude": 36.317303672977815,
+      "longitude": 139.30724091069723,
+      "radius_m": 133,
+      "coordinate_source_url": "https://map.yahoo.co.jp/v3/place/S_PzEhbzJsw",
+      "context_source_url": "https://www.city.ota.gunma.jp/page/4186.html"
+    },
+    {
+      "id": "g43",
+      "kana": "ろ",
+      "destination": "船津伝次平の墓",
+      "latitude": 36.43522944187735,
+      "longitude": 139.06254541451509,
+      "radius_m": 100,
+      "coordinate_source_url": "https://www.city.maebashi.gunma.jp/bunka_sports_kanko/7/3/11371.html",
+      "context_source_url": "https://worldheritage.pref.gunma.jp/kinuisan/db-dtl.php?data=10"
+    },
+    {
+      "id": "g44",
+      "kana": "わ",
+      "destination": "関孝和像",
+      "latitude": 36.244635437566075,
+      "longitude": 139.07870512881433,
+      "radius_m": 37,
+      "coordinate_source_url": "https://commons.wikimedia.org/wiki/File:Seki_Takakazu_monument.jpg",
+      "context_source_url": "https://www.city.fujioka.gunma.jp/soshiki/kyoikuiinkai/bunkazaihogo/2/5/sekikouwa/1034.html"
+    }
+  ]
+}

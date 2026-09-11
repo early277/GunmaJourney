@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>群馬をめぐる</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>現在地が訪問先の判定範囲内か確認し、現地スタンプを記録するために使います。アプリ内で撮影するときも、撮影位置を写真画面の略図に示すために使います。位置情報は端末内で処理し、アプリの使用中だけ取得します。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>訪問先で記念写真を撮り、カードの背景と写真一覧に表示するためにカメラを使います。写真はこのiPhoneのアプリ内に保存し、共有を選んだときだけ共有先へ渡します。</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>「画像を共有・保存」から「画像を保存」を選んだとき、44の訪問先の進捗をまとめた画像を、このiPhoneの写真ライブラリに追加するために使います。</string>
+</dict>
+</plist>
